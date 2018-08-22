@@ -1,7 +1,7 @@
 <template>
   <div class="allimgWapper">
     <toptitle toptitle="全球版图" pathkeys="battleEl"></toptitle>
-    <tabbar></tabbar>
+    <tabbar tabs="1"></tabbar>
     <currcity :city="city"></currcity>
     <guoji v-if="flagVal" @add="addFood"></guoji>
     <guonei v-if="!flagVal" @add="addFood"></guonei>

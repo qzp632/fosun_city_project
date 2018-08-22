@@ -80,12 +80,36 @@ export default {
                 case '投资价值-全球版图':
                     this.$router.push('/allImg')
                     break
+                case '投资价值-战略标签':
+                    this.$router.push('/battleEl')
+                    break
+                case '投资价值-行业布局':
+                    this.$router.push('/tradelayout')
+                    break
+                case '投资价值-红黄绿灯':
+                    this.$router.push('/lamp')
+                    break
+                case '产品运营':
+                    this.$router.push('/cpoperate')
+                    break
+                case '产品运营-管理架构':
+                    this.$router.push('/adminWork')
+                    break
+                case '产品运营-业务规模':
+                    this.$router.push('/bscale')
+                    break
+                case '产品运营-业务能力':
+                    this.$router.push('/capability')
+                    break
+                case '产品运营-可持续力':
+                    this.$router.push('/continued')
+                    break
+                case '产品运营-企业成长':
+                    this.$router.push('/growUp')
+                    break
             }
         }
-    },
-  components: {
-    // control
-  }
+    }
 }
 </script>
 

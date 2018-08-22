@@ -6,7 +6,7 @@
       </router-link>
     </div>
     <div>
-      <router-link tag="li" to="/">
+      <router-link tag="li" to="/adminWork">
         <img src="../images/operation.png" alt="">
       </router-link>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <toptitle toptitle="战略标签" pathkeys="tradelayout"></toptitle>
-    <tabbar></tabbar>
+    <tabbar tabs="1"></tabbar>
     <div class="battleEl">
       <div class="proWapper">
         <div class="pornum">

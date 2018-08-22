@@ -20,7 +20,8 @@
         </div>
         <div class="cityProject">
             <span class="proname">{{currCity}}项目<span class="prolen">(20)</span></span>
-            <div class="prolist">
+            <proList></proList>
+            <!-- <div class="prolist">
                 <ul>
                     <li v-for="(i,index) in 4" :key="index" :style="{'float':i%2 !== 0?'right':'left'}">
                         <img src="../images/prodata.png" alt="">
@@ -30,7 +31,7 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -41,7 +42,7 @@
 import { mapGetters } from 'vuex'
 import { mapActions } from 'vuex'
 import { commonTab } from '../js/tab'
-
+import proList from './proList'
 export default {
     props: ['currCity','cityFlag'],
     data() {
@@ -78,6 +79,9 @@ export default {
         setRed() {
             this.redflag = !this.redflag;
         }
+    },
+    components: {
+        proList
     }
   }
 </script>

@@ -3,33 +3,38 @@
       <div class="tabbar">
           <div class="tabox" :class="{'current':currentFlag[0].flag}" @click="checkTab(0)">
               <span class="toplink">
-                  <img src="../images/tab1.png" alt="">
+                  <img v-if="tabs==='1'" src="../images/tab1.png" alt="">
+                  <img v-if="tabs==='2'" src="../images/tabs1.png" alt="">
               </span>
-              <span class="bottomlink">全球版图</span>
+              <span class="bottomlink">{{tabs==='1'?'全球版图':'管理架构'}}</span>
           </div>
           <div class="tabox" :class="{'current':currentFlag[1].flag}" @click="checkTab(1)">
               <span class="toplink">
-                  <img src="../images/tab2.png" alt="">
+                  <img v-if="tabs==='1'" src="../images/tab2.png" alt="">
+                  <img v-if="tabs==='2'" src="../images/tabs2.png" alt="">
               </span>
-              <span class="bottomlink">战略标签</span>
+              <span class="bottomlink">{{tabs==='1'?'战略标签':'业务规模'}}</span>
           </div>
           <div class="tabox" :class="{'current':currentFlag[2].flag}" @click="checkTab(2)">
               <span class="toplink">
-                  <img src="../images/tab3.png" alt="">
+                  <img v-if="tabs==='1'" src="../images/tab3.png" alt="">
+                  <img v-if="tabs==='2'" src="../images/tabs3.png" alt="">
               </span>
-              <span class="bottomlink">行业布局</span>
+              <span class="bottomlink">{{tabs==='1'?'行业布局':'业务能力'}}</span>
           </div>
           <div class="tabox" :class="{'current':currentFlag[3].flag}" @click="checkTab(3)">
               <span class="toplink">
-                  <img src="../images/tab4.png" alt="">
+                  <img v-if="tabs==='1'" src="../images/tab4.png" alt="">
+                  <img v-if="tabs==='2'" src="../images/tabs4.png" alt="">
               </span>
-              <span class="bottomlink">红绿黄灯</span>
+              <span class="bottomlink">{{tabs==='1'?'红绿黄灯':'可持续力'}}</span>
           </div>
           <div class="tabox" :class="{'current':currentFlag[4].flag}" @click="checkTab(4)">
               <span class="toplink">
-                  <img src="../images/tab5.png" alt="">
+                  <img v-if="tabs==='1'" src="../images/tab5.png" alt="">
+                  <img v-if="tabs==='2'" src="../images/tabs5.png" alt="">
               </span>
-              <span class="bottomlink">团队贡献</span>
+              <span class="bottomlink">{{tabs==='1'?'团队贡献':'企业成长'}}</span>
           </div>
       </div>
   </div>
@@ -39,6 +44,11 @@
 import { mapGetters } from 'vuex'
 import { commonTab } from '../js/tab'
 export default {
+    props: {
+        tabs: {
+            type: String
+        }
+    },
     data() {
         return {
             currentFlag: [
@@ -76,13 +86,39 @@ export default {
         tabCheck(key) {
             switch (key) {
                 case 0:
-                    this.$router.push(`/allImg`)
+                    if (this.tabs === '1') {
+                        this.$router.push(`/allImg`)
+                    } else {
+                        this.$router.push(`/adminWork`)
+                    }
                     break
                 case 1:
-                    this.$router.push(`/battleEl`)
+                    if (this.tabs === '1') {
+                        this.$router.push(`/battleEl`)
+                    } else {
+                        this.$router.push(`/bscale`)
+                    }
                     break
                 case 2:
-                    this.$router.push(`/tradelayout`)
+                    if (this.tabs === '1') {
+                        this.$router.push(`/tradelayout`)
+                    } else {
+                        this.$router.push(`/capability`)
+                    }
+                    break
+                case 3:
+                    if (this.tabs === '1') {
+                        this.$router.push(`/lamp`)
+                    } else {
+                        this.$router.push(`/continued`)
+                    }
+                    break
+                case 4:
+                    if (this.tabs === '1') {
+                        this.$router.push(`/team`)
+                    } else {
+                        this.$router.push(`/growUp`)
+                    }
                     break
             }
         }

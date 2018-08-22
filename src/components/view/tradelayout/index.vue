@@ -1,7 +1,7 @@
 <template>
   <div>
-    <toptitle toptitle="行业布局" pathkey="tradelayout"></toptitle>
-    <tabbar></tabbar>
+    <toptitle toptitle="行业布局" pathkeys="lamp"></toptitle>
+    <tabbar tabs="1"></tabbar>
     <div class="tradelayout">
         <div class="statusWapper">
             <div class="statusbtn">选择状态</div>
@@ -80,7 +80,6 @@ export default {
                         type:'pie',
                         selectedMode: 'single',
                         radius: ['50%', '30%'],
-
                         label: {
                             normal: {
                                 position: 'inner'
