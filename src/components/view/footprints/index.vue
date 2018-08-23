@@ -1,56 +1,51 @@
 <template>
-  <div class="container">
-    <div :class="className" :id="id" :style="{height:height,width:width}" ref="myEchart"></div>
-    <gnselect :currCity="currCity" :cityFlag=false></gnselect>
-    <!-- <Title :title="title"></Title>
-    <Search :placeholder="placeholder" :find="find" @listenSearch="searchItem" @listenAdd="addNew" @listenLeadIng="leadingItem"></Search> -->
-    <!-- <div id="provinceChart" class="charts" ref="myEchart1" style="height:400px;"></div> -->
-  </div>
+    <div class="box">
+        <div class="footprintWapper">
+            <h2>人员足迹</h2>
+            <div class="currCity">
+                <span>当前选择</span>
+                <span>{{currCity}}</span>
+                <span :style="{'font-size':'2.88vw','color':'#ccc'}">(地区分布图可点击)</span>
+            </div>
+            <div id="main"></div>
+            <div>项目数量和出差人数 (总部)</div>
+            <div class="cityBox">
+                <div class="cityName" v-for="(i,index) in 4" :key="index" :style="{'float':i%2 === 0?'right':'left'}">
+                    <div class="cityImg">上海</div>
+                    <div class="citycon">
+                        <span class="ts" @click="getCount(1)">
+                            <span>18</span>
+                            <span>出差人数</span>
+                        </span>
+                        <span class="ts" @click="getCount(2)">
+                            <span>18</span>
+                            <span>项目数量</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footerBar></footerBar>
+    </div>
 </template>
+
 <script>
-  import echarts from "echarts";
-  import '../../../../node_modules/echarts/map/js/world.js'
-  import gnselect from '../../commonview/gnselect'
-  export default {
-    name: "echarts",
-    props: {
-      city: {
-        type: String
-      },
-      className: {
-        type: String,
-        default: "yourClassName"
-      },
-      id: {
-        type: String,
-        default: "yourID"
-      },
-      width: {
-        type: String,
-        default: "100%"
-      },
-      height: {
-        type: String,
-        default: "300px"
-      }
-    },
+import echarts from "echarts";
+import footerBar from '../../commonview/footerBar'
+export default {
     data() {
-      return {
-        title: "图表",
-        currCity: '',
-        placeholder: "用户名/电话",
-        find: "2", //1显示新增按钮，2显示导入按钮，若不显示这两个按钮可以写0或者不写值
-        chart: null
-      };
+        return {
+            currCity: 'China'
+        }
     },
     mounted() {
-
-      this.chinaConfigure();
+        this.echartsInit()
     },
     methods: {
-      chinaConfigure() {
-        var self = this
-        let myChart = echarts.init(this.$refs.myEchart); //这里是为了获得容器所在位置
+        echartsInit() {
+            var self = this
+            var myChart = echarts.init(document.getElementById('main'))
+
             var option = {
                 dataRange: {
                     show: false,
@@ -275,22 +270,74 @@
             myChart.setOption(option)
             myChart.on('click', function(res) {
               self.currCity = res.name
-              self.$emit('add', self.currCity);
-              console.log(res)
             })
-      }
+        },
+        getCount(key) {
+            if (key === 1) {
+                this.$router.push('/rymx')
+            } else {
+                this.$router.push('/projectData')
+            }
+        }
     },
     components: {
-        gnselect
+        footerBar
     }
-  }
+}
 </script>
 
-<style>
-.container {
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.box {
+    background: #eee;
+}
+.footprintWapper {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 5vw;
+    position: relative;
+}
+#main {
     width: 100%;
-    height: 80vw;
-    top: 38vw;
+    height: 70vw;
+    margin: 0 auto;
+}
+.currCity {
+    width: 100%;
     position: absolute;
+    top: 16vw;
+}
+.cityBox {
+    width: 100%;
+    padding: 1vw;
+    overflow: hidden;
+}
+.cityBox .cityName {
+    width: 45%;
+    height: 40vw;
+    box-shadow: 0 0 2vw silver;
+    float: left;
+    margin-top: 3vw;
+}
+.cityImg {
+    width: 100%;
+    height: 25vw;
+    background: #666;
+}
+.citycon .ts {
+    font-size: 3.2vw;
+    display: block;
+    width: 40%;
+    float: left;
+    margin-left: 3%;
+    background: #666;
+    margin-top: 3vw;
+    padding: 1vw;
+    border-radius: 1vw;
+}
+.citycon .ts span{
+    display: block;
+    text-align: center;
+
 }
 </style>

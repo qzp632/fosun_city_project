@@ -69,6 +69,7 @@
           <proList v-show="!proFlag"></proList>
       </div>
     </div>
+    <footerBar></footerBar>
   </div>
 </template>
 
@@ -78,6 +79,7 @@ import { mapActions } from 'vuex'
 import toptitle from '../../commonview/toptitle'
 import tabbar from '../../commonview/tabbar'
 import proList from '../../commonview/proList'
+import footerBar from '../../commonview/footerBar'
 import currlamp from './currlamp'
 export default {
 
@@ -119,7 +121,8 @@ export default {
       toptitle,
       tabbar,
       currlamp,
-      proList
+      proList,
+      footerBar
     }
   }
 </script>

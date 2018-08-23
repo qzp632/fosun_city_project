@@ -40,6 +40,7 @@
                 <span class="num num1">(50)</span>
             </div>
         </div>
+        <footerBar></footerBar>
     </div>
 </template>
 
@@ -48,6 +49,7 @@ import { mapActions } from 'vuex'
 // import { commonTab } from '../js/tab'
 import toptitle from '../../commonview/toptitle'
 import tabbar from '../../commonview/tabbar'
+import footerBar from '../../commonview/footerBar'
 export default {
     methods: {
         ...mapActions([
@@ -59,7 +61,8 @@ export default {
     },
     components: {
         toptitle,
-        tabbar
+        tabbar,
+        footerBar
     }
 }
 </script>

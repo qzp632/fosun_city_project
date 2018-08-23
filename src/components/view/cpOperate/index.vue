@@ -43,12 +43,16 @@
             <img src="../../images/zsr.png" alt="">
             <span>收入100亿</span>
         </div>
+        <footerBar></footerBar>
     </div>
 </template>
 
 <script>
+import footerBar from '../../commonview/footerBar'
 export default {
-
+    components: {
+        footerBar
+    }
 }
 </script>
 

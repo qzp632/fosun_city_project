@@ -31,6 +31,7 @@
             </div>
         </div>
     </div>
+    <footerBar></footerBar>
   </div>
 </template>
 
@@ -39,6 +40,7 @@ import { mapActions } from 'vuex'
 import { commonTab } from '../../js/tab'
 import toptitle from '../../commonview/toptitle'
 import tabbar from '../../commonview/tabbar'
+import footerBar from '../../commonview/footerBar'
 import echarts from 'echarts';
 
 export default {
@@ -116,7 +118,8 @@ export default {
     },
     components: {
       toptitle,
-      tabbar
+      tabbar,
+      footerBar
     }
   }
 </script>

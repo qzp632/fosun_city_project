@@ -76,6 +76,7 @@
             </div>
         </div>
     </div>
+    <footerBar></footerBar>
   </div>
 </template>
 
@@ -85,6 +86,7 @@ import { commonTab } from '../../js/tab'
 import toptitle from '../../commonview/toptitle'
 import tabbar from '../../commonview/tabbar'
 import selecttype from '../../commonview/selectType'
+import footerBar from '../../commonview/footerBar'
 import teamdata from './teamdata'
 import teamdata1 from './teamdata1'
 export default {
@@ -144,7 +146,8 @@ export default {
       tabbar,
       selecttype,
       teamdata,
-      teamdata1
+      teamdata1,
+      footerBar
     }
   }
 </script>

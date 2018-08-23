@@ -13,6 +13,9 @@ import bscale from '@/components/view/bScale'
 import capability from '@/components/view/capability'
 import continued from '@/components/view/continued'
 import growUp from '@/components/view/growUp'
+import footprints from '@/components/view/footprints'
+import rymx from '@/components/view/rymx'
+import projectData from '@/components/view/projectData'
 Vue.use(Router)
 
 export default new Router({
@@ -81,6 +84,21 @@ export default new Router({
       path: '/growUp',
       name: 'growUp',
       component: growUp
-    }
+    },
+    {
+      path: '/footprints',
+      name: 'footprints',
+      component: footprints
+    },
+    {
+      path: '/rymx',
+      name: 'rymx',
+      component: rymx
+    },
+    {
+      path: '/projectData',
+      name: 'projectData',
+      component: projectData
+    } 
   ]
 })

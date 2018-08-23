@@ -1,3 +1,4 @@
+//用来请求国内项目数据
 import { getCityNameList } from '../../api/allimgConfig'
 
 const allimgConfig = {

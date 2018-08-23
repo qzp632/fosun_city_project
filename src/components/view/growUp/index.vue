@@ -43,6 +43,7 @@
                 <proList></proList>
             </div>
         </div>
+        <footerBar></footerBar>
     </div>
 </template>
 
@@ -53,6 +54,7 @@ import { mapActions } from 'vuex'
 import toptitle from '../../commonview/toptitle'
 import tabbar from '../../commonview/tabbar'
 import proList from '../../commonview/proList'
+import footerBar from '../../commonview/footerBar'
 export default {
     data() {
         return {
@@ -85,7 +87,8 @@ export default {
     components: {
         toptitle,
         tabbar,
-        proList
+        proList,
+        footerBar
     }
 }
 </script>

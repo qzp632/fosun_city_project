@@ -37,6 +37,7 @@
                 <proList></proList>
             </div>
         </div>
+        <footerBar></footerBar>
     </div>
 </template>
 
@@ -48,6 +49,7 @@ import toptitle from '../../commonview/toptitle'
 import tabbar from '../../commonview/tabbar'
 import selecttype from '../../commonview/selectType'
 import proList from '../../commonview/proList'
+import footerBar from '../../commonview/footerBar'
 import echarts from 'echarts';
 export default {
     data() {
@@ -126,7 +128,8 @@ export default {
         toptitle,
         tabbar,
         selecttype,
-        proList
+        proList,
+        footerBar
     }
 }
 </script>

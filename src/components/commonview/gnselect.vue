@@ -66,13 +66,13 @@ export default {
             'CityNameList'
         ])
     },
-    created() {
-        this.getCityNameList()
-    },
+    // created() {
+    //     this.getCityNameList()
+    // },
     methods: {
-        ...mapActions([
-            'getCityNameList'
-        ]),
+        // ...mapActions([
+        //     'getCityNameList'
+        // ]),
         checkTab(key) {
             commonTab(key,this.currentFlag)
         },

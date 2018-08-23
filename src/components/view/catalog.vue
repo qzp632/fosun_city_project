@@ -6,10 +6,12 @@
               <span class="tilteright" @click="toPath(item.right)">{{item.right}}</span>
           </li>
       </ul>
+      <footerBar></footerBar>
   </div>
 </template>
 
 <script>
+// import footerBar from '../commonview/footerBar'
 export default {
   name: 'HelloWorld',
   data() {
@@ -107,8 +109,15 @@ export default {
                 case '产品运营-企业成长':
                     this.$router.push('/growUp')
                     break
+                case '人员足迹':
+                    this.$router.push('/footprints')
+                    break
+                    
             }
         }
+    },
+    components: {
+        // footerBar
     }
 }
 </script>

@@ -122,6 +122,7 @@
         </div>
       </div>
     </div>
+    <footerBar></footerBar>
   </div>
 </template>
 
@@ -130,7 +131,7 @@ import { mapGetters } from 'vuex'
 import { mapActions } from 'vuex'
 import toptitle from '../../commonview/toptitle'
 import tabbar from '../../commonview/tabbar'
-
+import footerBar from '../../commonview/footerBar'
 export default {
 
     data() {
@@ -148,7 +149,8 @@ export default {
     },
     components: {
       toptitle,
-      tabbar
+      tabbar,
+      footerBar
     }
   }
 </script>

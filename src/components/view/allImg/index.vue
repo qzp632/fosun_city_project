@@ -5,6 +5,7 @@
     <currcity :city="city"></currcity>
     <guoji v-if="flagVal" @add="addFood"></guoji>
     <guonei v-if="!flagVal" @add="addFood"></guonei>
+    <footerBar></footerBar>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import tabbar from '../../commonview/tabbar'
 import guonei from './guonei'
 import guoji from './guoji'
 import currcity from './currcity'
+import footerBar from '../../commonview/footerBar'
 // import { commonTab } from '../../js/tab'
 export default {
     name: "echarts",
@@ -32,11 +34,13 @@ export default {
     created() {
         this.setPathKey(0)
         this.setFlag(false)
+        this.getCityNameList()
     },
     methods: {
         ...mapActions([
             'setFlag',
-            'setPathKey'
+            'setPathKey',
+            'getCityNameList'
         ]),
         addFood(key) {
             if (key) {
@@ -49,7 +53,8 @@ export default {
       tabbar,
       guonei,
       guoji,
-      currcity
+      currcity,
+      footerBar
     }
   }
 </script>

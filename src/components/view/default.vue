@@ -21,18 +21,18 @@
       </router-link>
     </div>
     <toptitle toptitle="首页" pathkeys="catalog"></toptitle>
-    <!-- <tabbar></tabbar> -->
+    <footerBar></footerBar>
   </div>
 </template>
 
 <script>
 import toptitle from '../commonview/toptitle'
-// import tabbar from '../commonview/tabbar'
+import footerBar from '../commonview/footerBar'
 export default {
   name: 'HelloWorld',
   components: {
-    toptitle
-    // tabbar
+    toptitle,
+    footerBar
   }
 }
 </script>

@@ -41,14 +41,14 @@ export default {
             ]
         }
     },
-    computed: {
-        ...mapGetters([
-            'CityNameList'
-        ])
-    },
-    created() {
-        this.getCityNameList()
-    },
+    // computed: {
+    //     ...mapGetters([
+    //         'CityNameList'
+    //     ])
+    // },
+    // created() {
+    //     this.getCityNameList()
+    // },
     mounted() {
       this.highmaps();
     },
